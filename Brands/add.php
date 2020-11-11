@@ -7,7 +7,7 @@ if($_POST){
     && isset($_POST['brand_logo']) && !empty($_POST['brand_logo'])
     && isset($_POST['brand_description']) && !empty($_POST['brand_description'])){
         //Inclusion de la connexion à la base
-        require_once('connect.php');
+        require_once('../connect.php');
         //supprimer les balises de l'URL envoyé
         $name = strip_tags($_POST['brand_name']);
         $slogan = strip_tags($_POST['brand_slogan']);
@@ -26,7 +26,7 @@ if($_POST){
 
         $query->execute();
         $_SESSION['message'] = "Nouvelle Marque Ajouté";
-        require_once('close.php');
+        require_once('../close.php');
 
 
         header('Location: index.php');

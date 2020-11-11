@@ -7,7 +7,7 @@ if($_POST){
     && isset($_POST['brand_logo']) && !empty($_POST['brand_logo'])
     && isset($_POST['brand_description']) && !empty($_POST['brand_description'])){
         //Inclusion de la connexion à la base
-        require_once('connect.php');
+        require_once('../connect.php');
 
         //supprimer les balises de l'URL envoyé
         $id = strip_tags($_POST['brand_id']);
@@ -27,8 +27,8 @@ if($_POST){
         $query->bindValue(':brand_description',$description,PDO::PARAM_STR);
 
         $query->execute();
-        $_SESSION['message'] = "Nouvelle marque Ajouté";
-        require_once('close.php');
+        $_SESSION['message'] = "Marque Modifiée";
+        require_once('../close.php');
 
         header('Location: index.php');
     }else{
@@ -39,7 +39,7 @@ if($_POST){
 // Est-ce que l'id existe et n'est pas vide dans l'URL
 
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect.php');
+    require_once('../connect.php');
         
         //supprimer les balises de l'URL envoyé
         $id = strip_tags($_GET['id']);
