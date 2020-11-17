@@ -1,0 +1,5 @@
+SELECT brands.brand_name, products.product_name FROM brands INNER JOIN products ON products.product_id = brands.brand_id
+
+
+
+SELECT brands.brand_id, products.product_id FROM brands INNER JOIN products ON products.product_id = brands.brand_id
