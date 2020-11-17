@@ -78,7 +78,16 @@ nav #navigationBar li:hover {
   background-color: #1b1b1b;
   border: 1px solid black;
   border-radius: 5px;
+
+}
+
+nav #navigationBar a:hover
+{
   color: whitesmoke;
+}
+nav a:visited 
+{
+  color:#1b1b1b;
 }
 
 header {
@@ -131,3 +140,32 @@ header .myVideo {
   opacity: 0.7;
 }
 /*# sourceMappingURL=main.css.map */
+
+footer{
+  position: relative;
+  height: 20vh;
+  background-color: #1b1b1b;
+}
+
+footer> a {
+  color: cornsilk;
+  height: 20px;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top:0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-decoration: none;
+}
+
+footer>a:visited
+{
+  color: cornsilk;
+}
+
+.allProduct 
+{
+  margin-bottom: 5vh;
+}
