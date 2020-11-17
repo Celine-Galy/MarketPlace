@@ -80,7 +80,7 @@ if(!$brand){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier la Marque</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body>
@@ -117,7 +117,7 @@ if(!$brand){
                     </div>
 
                     <input type="hidden" value="<?php echo $brand['brand_id'] ?>" name="brand_id">
-                    <button class="btn btn-primary">Valider</button>
+                    <button class="btn btn-danger">Valider</button>
                 </form>
             </section>
         </div>

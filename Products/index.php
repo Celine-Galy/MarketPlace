@@ -26,7 +26,7 @@ require_once('../close.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>produits</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body>
@@ -60,6 +60,7 @@ require_once('../close.php');
                         <th>Prix Livraison HT</th>
                         <th>MarqueID</th>
                         <th>Image</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
                         <?php
@@ -85,7 +86,7 @@ require_once('../close.php');
 
                     </tbody>
                 </table>
-                <a href="add.php" class="btn btn-primary">Ajouter un nouveau produit</a>
+                <a href="add.php" class="btn btn-danger">Ajouter un nouveau produit</a>
             </section>
         </div>
     </main>
