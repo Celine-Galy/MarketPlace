@@ -17,7 +17,7 @@
             <img src="./img/simplon.png" alt="logo">
         </div>
         <div class="gestion">
-            <a href="Products/index.php" class="btn btn-danger">Gestion des produits</a>
+            <a href="Products/products.php" class="btn btn-danger">Gestion des produits</a>
             <a href="Brands/index.php" class="btn btn-danger">Gestion des Marques</a>
             <a href="Categories/index.php" class="btn btn-danger">Gestion des Catégories</a>
             <a href="Sellers/index.php" class="btn btn-danger">Gestion des Vendeur</a>
