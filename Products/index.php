@@ -5,7 +5,7 @@ session_start();
 require_once('../connect.php');
 
 //requète
-$sql = 'SELECT * FROM `brands`';
+$sql = 'SELECT * FROM `products`';
 
 //préparation de la requête
 $query = $db->prepare($sql);
@@ -25,7 +25,7 @@ require_once('../close.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marques</title>
+    <title>produits</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 </head>
@@ -50,28 +50,34 @@ require_once('../close.php');
                             $_SESSION['message']='';
                         }
                     ?>
-                    <h1>Liste des Marques</h1>
+                    <h1>Liste des Produits</h1>
                     <thead>
                         <th>ID</th>
                         <th>Nom</th>
-                        <th>Slogan</th>
-                        <th>Logo</th>
-                        <th>Description</th>
-                        <th>Action</th>
+                        <th>Description Courte</th>
+                        <th>Description Longue</th>
+                        <th>Prix HT</th>
+                        <th>Prix Livraison HT</th>
+                        <th>MarqueID</th>
+                        <th>Image</th>
                     </thead>
                     <tbody>
                         <?php
                         //Boucle sur la variable result
-                            foreach($result as $brands){
+                            foreach($result as $products){
                         ?>
                             <tr>
-                                <td><?php echo $brands['brand_id'] ?></td>
-                                <td><?php echo $brands['brand_name'] ?></td>
-                                <td><?php echo $brands['brand_slogan'] ?></td>
-                                <td class="logoImage"><?php echo $brands['brand_logo']?></td>
-                                <td><?php echo $brands['brand_description'] ?></td>
+                                <td><?php echo $products['product_id'] ?></td>
+                                <td><?php echo $products['product_name'] ?></td>
+                                <td><?php echo $products['product_shortDescription'] ?></td>
+                                <td class="logoImage"><?php echo $products['product_longDescription']?></td>
+                                <td><?php echo $products['product_priceHT'] ?></td>
+                                <td><?php echo $products['product_deliveryHT'] ?></td>
+                                <td><?php echo $products['brand_id'] ?></td>  
+                                <td><?php echo $products['product_image'] ?></td>         
 
-                                <td><a href="details.php?id=<?php echo $brands['brand_id']?>">Voir</a> <a href="edit.php?id=<?php echo $brands['brand_id']?>">Modifier</a> <a href="delete.php?id=<?php echo $brands['brand_id']?>">Supprimer</a></td>
+
+                                <td><a href="details.php?id=<?php echo $products['product_id']?>">Voir</a> <a href="edit.php?id=<?php echo $products['product_id']?>">Modifier</a> <a href="delete.php?id=<?php echo $products['product_id']?>">Supprimer</a></td>
                             </tr>
                         <?php
                         }
@@ -79,7 +85,7 @@ require_once('../close.php');
 
                     </tbody>
                 </table>
-                <a href="add.php" class="btn btn-primary">Ajouter une nouvelle marque</a>
+                <a href="add.php" class="btn btn-primary">Ajouter un nouveau produit</a>
             </section>
         </div>
     </main>

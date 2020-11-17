@@ -7,9 +7,8 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         //supprimer les balises de l'URL envoyé
         $id = strip_tags($_GET['id']);
 
-        // $sql = 'SELECT * FROM `sellers` WHERE `seller_id` = :seller_id;';
     
-        $sql ="SELECT * FROM `sellers` WHERE `seller_id` = ".$_GET['id'];
+        $sql ="SELECT * FROM `products` WHERE `product_id` = ".$_GET['id'];
     
         //préparation de la requête
         $query = $db ->prepare($sql);
@@ -21,21 +20,18 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         $query->execute();
         //Récupérer le vendeur
 
-        $seller = $query->fetch();
+        $product = $query->fetch();
 
-        // var_dump($seller);
 
     //Vérifier si le vendeur existe
-    if(!$seller){
+    if(!$product){
         $_SESSION['erreur']="cet id n'existe pas";
-        header('location: sellers.php');
+        header('location: index.php');
     }
 
 }else{
     $_SESSION['erreur'] = "URL Invalide";
-    header('Location: sellers.php');
-    // var_dump($seller);
-    
+    header('Location: index.php');
 }
 
 ?>
@@ -45,22 +41,23 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../MarketPlace-front/style/style.css" media="all" />   
-
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <title>Détails de la marque</title>
+    <title>Détails du produit</title>
 </head>
 <body>
     <main class="container">
         <div class="row">
             <section class="col-12">
-                <h1>Détails du Vendeur <?php echo $seller['seller_name'] ?></h1>
-                <p>Nom: <?php echo $seller['seller_name']?></p>
-                <p>Adresse: <?php echo $seller['seller_adress']?></p>
-                <p>Email: <?php echo $seller['seller_email']?></p>
-                <p>Image: <img src="<?php echo $seller['seller_image']?>" alt=""> </p>
-                <p><a href="sellers.php">Retour</a></p>
+                <h1>Détails du Produit <?php echo $product['product_name'] ?></h1>
+                <p>ID: <?php echo $product['product_id']?></p>
+                <p>Nom: <?php echo $product['product_name']?></p>
+                <p>description Courte: <?php echo $product['product_shortDescription']?></p>
+                <p>longue description: <?php echo $product['product_longDescription']?></p>
+                <p>Prix HT: <?php echo $product['product_priceHT']?></p>
+                <p>Prix Livraison HT: <?php echo $product['product_deliveryHT']?></p>
+                <p>ID Marque: <?php echo $product['brand_id']?></p>
+
+                <p><a href="index.php">Retour</a> <a href="edit.php?id=<?php $product['product_id'] ?>">Supprimer</a></p>
             </section>
         </div>
     </main>

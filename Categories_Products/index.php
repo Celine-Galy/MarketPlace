@@ -5,7 +5,7 @@ session_start();
 require_once('../connect.php');
 
 //requète
-$sql = 'SELECT * FROM `brands`';
+$sql = 'SELECT * FROM `categories_products`';
 
 //préparation de la requête
 $query = $db->prepare($sql);
@@ -52,26 +52,23 @@ require_once('../close.php');
                     ?>
                     <h1>Liste des Marques</h1>
                     <thead>
-                        <th>ID</th>
-                        <th>Nom</th>
-                        <th>Slogan</th>
-                        <th>Logo</th>
-                        <th>Description</th>
-                        <th>Action</th>
+                        <th>ProduitID</th>
+                        <th>CategoryID</th>
+
                     </thead>
                     <tbody>
                         <?php
                         //Boucle sur la variable result
-                            foreach($result as $brands){
+                            foreach($result as $productsCategories){
+                            var_dump($productsCategories)
+
                         ?>
                             <tr>
-                                <td><?php echo $brands['brand_id'] ?></td>
-                                <td><?php echo $brands['brand_name'] ?></td>
-                                <td><?php echo $brands['brand_slogan'] ?></td>
-                                <td class="logoImage"><?php echo $brands['brand_logo']?></td>
-                                <td><?php echo $brands['brand_description'] ?></td>
+                                <td><?php echo $productsCategories['product_id'] ?></td>
+                                <td><?php echo $productsCategories['category_id'] ?></td>
+                        
 
-                                <td><a href="details.php?id=<?php echo $brands['brand_id']?>">Voir</a> <a href="edit.php?id=<?php echo $brands['brand_id']?>">Modifier</a> <a href="delete.php?id=<?php echo $brands['brand_id']?>">Supprimer</a></td>
+                                <td><a href="details.php?id=<?php echo $productsCategories['category_id'].$productsCategories['product_id']?>">Voir</a> <a href="edit.php?id=<?php echo $productsCategories['category_id'].$productsCategories['product_id']?>">Modifier</a> <a href="delete.php?id=<?php echo $productsCategories['category_id'].$productsCategories['product_id']?>">Supprimer</a></td>
                             </tr>
                         <?php
                         }
@@ -79,7 +76,7 @@ require_once('../close.php');
 
                     </tbody>
                 </table>
-                <a href="add.php" class="btn btn-primary">Ajouter une nouvelle marque</a>
+                <a href="add.php" class="btn btn-primary">Lier une nouvelle catégorie</a>
             </section>
         </div>
     </main>
