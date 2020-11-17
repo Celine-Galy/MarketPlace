@@ -59,7 +59,6 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                 <p>Nom: <?php echo $seller['seller_name']?></p>
                 <p>Adresse: <?php echo $seller['seller_address']?></p>
                 <p>Email: <?php echo $seller['seller_email']?></p>
-                <p>Image: <img src="<?php echo $seller['seller_image']?>" alt=""> </p>
                 <p><a href="sellers.php">Retour</a></p>
             </section>
         </div>

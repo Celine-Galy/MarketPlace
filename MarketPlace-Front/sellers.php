@@ -58,7 +58,7 @@ require_once('../close.php');
                             <div>
                                 <a href="sellers_details.php?id=<?php echo $sellers['seller_id']?>">
                                     <div>
-                                        <img src="<?php echo $sellers['seller_image'] ?>" alt="" style="width: 300px;">
+                                        <!-- <img src="<?php echo $sellers['seller_image'] ?>" alt="" style="width: 300px;"> -->
                                         <h2><?php echo $sellers['seller_name'] ?></h2>
                                     </div>
                                 </a> 
