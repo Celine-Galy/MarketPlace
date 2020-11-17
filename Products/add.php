@@ -42,7 +42,7 @@ if($_POST){
         require_once('../close.php');
 
         var_dump($query);
-        header('Location: index.php');
+        header('Location: ../Categories_products/add.php');
     }else{
         $_SESSION['erreur'] = "Le formulaire est incomplet";
     }

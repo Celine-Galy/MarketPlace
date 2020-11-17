@@ -1,0 +1,19 @@
+.img
+{
+    position: relative;
+    margin-left: 40%;
+    /* right: 45%; */
+}
+.gestion
+{
+    position: relative;
+    margin-left: 28% ;
+    margin-top: 5%;
+}
+
+
+
+td{
+    word-wrap: break-word;
+    max-width: 300px;
+}

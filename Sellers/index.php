@@ -54,8 +54,8 @@ require_once('../close.php');
                         <th>Nom</th>
                         <th>Adresse</th>
                         <th>Email</th>
-                        <th>Image</th>
                         <th>Actions</th>
+
                     </thead>
                     <tbody>
                         <?php
@@ -65,10 +65,8 @@ require_once('../close.php');
                             <tr>
                                 <td><?php echo $sellers['seller_id'] ?></td>
                                 <td><?php echo $sellers['seller_name'] ?></td>
-                                <td><?php echo $sellers['seller_adress'] ?></td>
+                                <td><?php echo $sellers['seller_address'] ?></td>
                                 <td><?php echo $sellers['seller_email'] ?></td>
-                                <td><?php echo $sellers['seller_image'] ?></td>
-
                                 <td><a href="details.php?id=<?php echo $sellers['seller_id']?>">Voir</a> <a href="edit.php?id=<?php echo $sellers['seller_id']?>">Modifier</a> <a href="delete.php?id=<?php echo $sellers['seller_id']?>">Supprimer</a></td>
                             </tr>
                         <?php

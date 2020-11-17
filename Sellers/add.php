@@ -3,26 +3,24 @@ session_start();
 
 if($_POST){
     if(isset($_POST['seller_name']) && !empty($_POST['seller_name'])
-    && isset($_POST['seller_adress']) && !empty($_POST['seller_adress'])
-    && isset($_POST['seller_image']) && !empty($_POST['seller_image'])
+    && isset($_POST['seller_address']) && !empty($_POST['seller_address'])
     && isset($_POST['seller_email']) && !empty($_POST['seller_email'])){
         //Inclusion de la connexion à la base
         require_once('../connect.php');
 
         //supprimer les balises de l'URL envoyé
         $name = strip_tags($_POST['seller_name']);
-        $adress = strip_tags($_POST['seller_adress']);
+        $adress = strip_tags($_POST['seller_address']);
         $email = strip_tags($_POST['seller_email']);
         $image = strip_tags($_POST['seller_image']);
         
 
-        $sql = 'INSERT INTO `sellers`(`seller_name`,`seller_adress`,`seller_email`,`seller_image`) VALUES(:seller_name, :seller_adress, :seller_email,:seller_image)';
+        $sql = 'INSERT INTO `sellers`(`seller_name`,`seller_address`,`seller_email`) VALUES(:seller_name, :seller_address, :seller_email)';
         $query = $db->prepare($sql);
 
         $query->bindValue(':seller_name',$name,PDO::PARAM_STR);
-        $query->bindValue(':seller_adress',$adress,PDO::PARAM_STR);
+        $query->bindValue(':seller_address',$adress,PDO::PARAM_STR);
         $query->bindValue(':seller_email',$email,PDO::PARAM_STR);
-        $query->bindValue(':seller_image',$image,PDO::PARAM_STR);
 
         $query->execute();
         $_SESSION['message'] = "Nouveau vendeur Ajouté";
@@ -64,8 +62,8 @@ if($_POST){
                     </div>
 
                     <div class="form-group">
-                        <label for="seller_adress">Adresse</label>
-                        <input type="text" name="seller_adress" id="seller_adress" class="form-control">
+                        <label for="seller_address">Adresse</label>
+                        <input type="text" name="seller_address" id="seller_address" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -73,10 +71,6 @@ if($_POST){
                         <input type="email" name="seller_email" id="seller_email" class="form-control">
                     </div>
 
-                    <div class="form-group">
-                        <label for="seller_image">Image</label>
-                        <input type="text" name="seller_image" id="seller_image" class="form-control">
-                    </div>
                     <button class="btn btn-danger">Valider</button>
                 </form>
             </section>
