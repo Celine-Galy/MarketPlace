@@ -53,14 +53,17 @@ include('connexion.inc.php');
                     $result->close();
                 else :
         ?>
-        </section>
+    
       
         
           <?php
                 endif;
 
 ?>
-  
+    </section>
+  <footer>
+              <a href="">Simplon Market Place</a>
+    </footer>
     </body>
     
    

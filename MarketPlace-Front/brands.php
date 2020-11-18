@@ -83,5 +83,8 @@ require_once('../close.php');
             </section>
         </div>
     </main>
+    <footer>
+              <a href="">Simplon Market Place</a>
+    </footer>
 </body>
 </html>
