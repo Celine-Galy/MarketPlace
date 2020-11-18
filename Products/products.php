@@ -23,6 +23,7 @@ include('../connexion.inc.php');
     <section class="col-12">
         <table class="table">
             <thead>
+                
                 <th>Nom</th>
                 <th>EAN</th>
                 <th>Image</th>
