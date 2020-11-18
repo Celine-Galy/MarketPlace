@@ -113,7 +113,7 @@ header .myVideo {
 .card {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  width: 30%;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -167,5 +167,7 @@ footer>a:visited
 
 .allProduct 
 {
-  margin-bottom: 5vh;
+  flex-wrap: wrap;
+  margin: 5vh 10vw;
+  display: flex;
 }
