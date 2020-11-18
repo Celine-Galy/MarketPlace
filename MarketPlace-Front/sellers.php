@@ -24,12 +24,24 @@ require_once('../close.php');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vendeurs</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 </head>
 <body>
+<nav>
+            <div id="mainLogo">
+                <img src="img/logo.png" alt="logo de la société Simplon.co">
+            </div>
+            <ul id="navigationBar">
+                <li><a href="../index.php"> Accueil</a></li>
+                <li><a href="brands_details.php">Catégories</a></li>
+                <li><a href="sellers_details.php">Vendeurs</a></li>
+                <li><a href="../index2.php">Connexion</a></li>
+            </ul>
+        </nav>
     <main class="container">
         <div class="row">
             <section class="col-12">

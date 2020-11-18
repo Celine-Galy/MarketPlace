@@ -53,21 +53,15 @@ include('connexion.inc.php');
                     $result->close();
                 else :
         ?>
-        <!--<div class="card">
-            <img src="img/bilbo.jpg" alt="bilbo" style="width:100%">
-            <h1>bilbo le bilboquet</h1>
-            <p class="price">20€</p>
-            <p>C'est un jeu pas chère mais un peu chiant. Le jeu consiste par un mouvement d'adresse, en utilisant une seule main, à lancer la boule retenue par la ficelle de façon qu'elle retombe sur la tige et s'y enfile seule.</p>
-            <p><button>ajouter au panier</button></p>
-          </div> -->
         </section>
-          <footer>
-              <a href="">Simplon Market Place</a>
-          </footer>
+      
+        
           <?php
                 endif;
 
 ?>
-</body>
+  
     </body>
+    
+   
 </html>
