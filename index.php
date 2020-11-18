@@ -1,3 +1,8 @@
+<?php
+include('config.inc.php');
+include('connexion.inc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -25,16 +30,44 @@
             </video>
         </header>
         <section class="allProduct">
-        <div class="card">
+        <?php
+                $maRequete = 'SELECT * FROM products 
+                INNER JOIN products_sellers ON products_sellers.product_id = products.product_id
+                INNER JOIN categories_products ON categories_products.product_id = products.product_id
+                INNER JOIN categories ON categories.category_id = categories_products.category_id';
+
+
+                if ($result = $mysqli->query($maRequete)) :
+                    while ($objproduct = $result->fetch_object()) :
+                ?>
+                        <div class="card">
+                            <img src="img/bilbo.jpg" alt="bilbo" style="width:100%">
+                            <h3><?php echo $objproduct->product_name; ?></h3>
+                            <p class="price"><?php echo $objproduct->product_priceHT; ?>€</p>
+                            <p><?php echo $objproduct->product_longDescription; ?></p>
+                            <p><button>ajouter au panier</button></p>
+                        </div>
+                        <?php
+                    endwhile;
+
+                    $result->close();
+                else :
+        ?>
+        <!--<div class="card">
             <img src="img/bilbo.jpg" alt="bilbo" style="width:100%">
             <h1>bilbo le bilboquet</h1>
             <p class="price">20€</p>
             <p>C'est un jeu pas chère mais un peu chiant. Le jeu consiste par un mouvement d'adresse, en utilisant une seule main, à lancer la boule retenue par la ficelle de façon qu'elle retombe sur la tige et s'y enfile seule.</p>
             <p><button>ajouter au panier</button></p>
-          </div> 
+          </div> -->
         </section>
           <footer>
               <a href="">Simplon Market Place</a>
           </footer>
+          <?php
+                endif;
+
+?>
+</body>
     </body>
 </html>
